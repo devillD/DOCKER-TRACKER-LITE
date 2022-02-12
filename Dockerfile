@@ -29,6 +29,7 @@ RUN apk add --no-cache \
 	&& apk del gcc g++ make git cvs zlib-dev zip curl \
 	&& rm -rf /var/cache/apk/* /tmp/* 
 
+RUN mkdir /etc/opentracker && chmod +x /etc/opentracker
 RUN curl "https://gist.githubusercontent.com/unkusrx/19b5d7f1170df45718fecca702301974/raw/0e8d9d3cd5c7ea91914456e4ce83bd180a8989ed/ot.conf" > /etc/opentracker/opentracker.conf
 RUN echo "0123456789abcdef0123456789abcdef01234567" > /etc/opentracker/blacklist.txt
 
