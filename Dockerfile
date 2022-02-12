@@ -1,10 +1,7 @@
 FROM alpine
 
-MAINTAINER Lednerb <code@lednerb.de>
-
 WORKDIR /tmp
 
-# All-in-One RUN for a very small image size (< 5 MB)
 RUN apk add --no-cache \
 	gcc \
 	g++ \
