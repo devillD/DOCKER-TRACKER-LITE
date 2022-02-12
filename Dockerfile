@@ -1,7 +1,7 @@
 FROM alpine
 
 MAINTAINER Lednerb <code@lednerb.de>
-ENV PORT=6969
+
 WORKDIR /tmp
 
 # All-in-One RUN for a very small image size (< 5 MB)
@@ -30,8 +30,5 @@ RUN apk add --no-cache \
 
 COPY ./opentracker.conf /etc/opentracker/opentracker.conf
 COPY ./blacklist.txt	/etc/opentracker/blacklist.txt
-
-EXPOSE 6969/tcp
-EXPOSE 6969/udp
 
 CMD ["opentracker","-f","/etc/opentracker/opentracker.conf"]
