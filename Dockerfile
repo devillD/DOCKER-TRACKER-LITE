@@ -8,6 +8,7 @@ RUN apk add --no-cache \
 	make \
 	git \
 	zlib-dev \
+	cvs \
         zip \
 	curl \
 
