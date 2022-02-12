@@ -4,4 +4,4 @@ WORKDIR /tmp
 
 RUN npm install -g bittorrent-tracker
 
-CMD ["bittorrent-tracker","-p","$PORT","--http"]
+CMD ["bittorrent-tracker"]
