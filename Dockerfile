@@ -1,6 +1,6 @@
-FROM alpine
+FROM node:14-slim
 
-RUN apk add --no-cache --update nodejs npm
+WORKDIR /tmp
 
 RUN npm install -g bittorrent-tracker
 
