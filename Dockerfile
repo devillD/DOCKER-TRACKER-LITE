@@ -1,5 +1,7 @@
 FROM alpine
 
+#TEST DEPLOY
+
 WORKDIR /tmp
 
 RUN apk add --no-cache \
