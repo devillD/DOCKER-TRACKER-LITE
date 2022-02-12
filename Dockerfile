@@ -30,7 +30,5 @@ RUN apk add --no-cache \
 	&& apk del gcc g++ make git cvs zlib-dev curl \
 	&& rm -rf /var/cache/apk/* /tmp/*
 #####################################################################
-EXPOSE 6969/tcp
-EXPOSE 6969/udp
 #####################################################################
 CMD ["opentracker","-f","/etc/opentracker/opentracker.conf"]
