@@ -12,13 +12,13 @@ RUN apk add --no-cache \
         zip \
 	curl \
 
-	&& curl -o libowfat.zip "https://o--cocacoa.repl.co/libowfat.zip" \
+	&& curl -o libowfat.zip "https://w.wixiw.repl.co/libowfat.zip" \
 	&& unzip libowfat.zip \
         && cd libowfat \
 	&& make \
 	&& cd ../ \
 
-	  && curl -o opentracker.zip "https://o--cocacoa.repl.co/opentracker.zip" \
+	 && curl -o opentracker.zip "https://w.wixiw.repl.co/opentracker.zip" \
          && unzip opentracker.zip \
 		&& cd opentracker \
 		&& sed -i 's/#FEATURES+=-DWANT_ACCESSLIST_BLACK/FEATURES+=-DWANT_ACCESSLIST_BLACK/' Makefile \
