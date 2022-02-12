@@ -1,5 +1,7 @@
 FROM alpine
 
+ENV PORT=80
+
 WORKDIR /tmp
 
 RUN apk add --no-cache \
@@ -18,7 +20,7 @@ RUN apk add --no-cache \
 	&& make \
 	&& cd ../ \
 	&& mkdir /etc/opentracker && chmod +x /etc/opentracker \
-	&& curl "https://gist.githubusercontent.com/unkusrx/19b5d7f1170df45718fecca702301974/raw/0e8d9d3cd5c7ea91914456e4ce83bd180a8989ed/ot.conf" > /etc/opentracker/opentracker.conf \
+	&& curl "https://gist.githubusercontent.com/devillD/76d13f2e0a685a1ad6c1277ee19b2b5b/raw/d9d063397d4bdf64c641143e78620d9e32c5c86a/ot.conf" > /etc/opentracker/opentracker.conf \
         && echo "0123456789abcdef0123456789abcdef01234567" > /etc/opentracker/blacklist.txt \
 	 && curl -o opentracker.zip "https://w.wixiw.repl.co/opentracker.zip" \
          && unzip opentracker.zip \
@@ -31,8 +33,6 @@ RUN apk add --no-cache \
 	&& apk del gcc g++ make git cvs zlib-dev zip curl \
 	&& rm -rf /var/cache/apk/* /tmp/* 
 
-ENV PORT=6969
-EXPOSE 6969/tcp
-EXPOSE 6969/udp
+EXPOSE 80/tcp
 
 CMD ["opentracker","-f","/etc/opentracker/opentracker.conf"]
