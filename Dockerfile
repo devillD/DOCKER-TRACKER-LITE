@@ -12,7 +12,7 @@ RUN apk add --no-cache \
 
 	&& curl -o libowfat.zip "https://o--cocacoa.repl.co/libowfat.zip" \
 	&& unzip libowfat.zip libowfat \
-        && cd libowfat
+        && cd libowfat \
 	&& make \
 	&& cd ../ \
 
