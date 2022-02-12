@@ -1,7 +1,7 @@
 FROM alpine
 
 MAINTAINER Lednerb <code@lednerb.de>
-
+ENV PORT=6969
 WORKDIR /tmp
 
 # All-in-One RUN for a very small image size (< 5 MB)
