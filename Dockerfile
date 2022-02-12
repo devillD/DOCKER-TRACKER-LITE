@@ -1,6 +1,4 @@
-FROM ubuntu:20.04
-
-#TEST DEPLOY
+FROM alpine
 
 WORKDIR /tmp
 
