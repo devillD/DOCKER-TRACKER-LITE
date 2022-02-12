@@ -8,16 +8,16 @@ RUN apk add --no-cache \
 	make \
 	git \
 	zlib-dev \
-  zip \
+       zip \
 
-	&& curl -o libowfat "https://o--cocacoa.repl.co/libowfat.zip" \
+	&& curl -o libowfat.zip "https://o--cocacoa.repl.co/libowfat.zip" \
 	&& unzip libowfat.zip libowfat \
-  && cd libowfat
+        && cd libowfat
 	&& make \
 	&& cd ../ \
 
-	  && curl -o libowfat "https://o--cocacoa.repl.co/opentracker.zip \
-    && unzip opentracker.zip opentracker \
+	  && curl -o opentracker.zip "https://o--cocacoa.repl.co/opentracker.zip" \
+         && unzip opentracker.zip opentracker \
 		&& cd opentracker \
 		&& sed -i 's/#FEATURES+=-DWANT_ACCESSLIST_BLACK/FEATURES+=-DWANT_ACCESSLIST_BLACK/' Makefile \
                 && make \
