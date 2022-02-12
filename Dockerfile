@@ -35,4 +35,4 @@ ENV PORT=6969
 EXPOSE 6969/tcp
 EXPOSE 6969/udp
 
-CMD ["opentracker","-f","/etc/opentracker/opentracker.conf"
+CMD ["opentracker","-f","/etc/opentracker/opentracker.conf"]
