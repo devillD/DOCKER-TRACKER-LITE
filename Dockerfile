@@ -16,8 +16,9 @@ RUN apk add --no-cache \
 	&& make \
 	&& cd ../ \
 	
-	&& curl "https://gist.githubusercontent.com/devillD/76d13f2e0a685a1ad6c1277ee19b2b5b/raw/c1733cbf75242df36e952b63265ecf39efe04783/ot.conf" > opentracker.conf \
-        && echo "0123456789abcdef0123456789abcdef01234567" > blacklist.txt \
+	&& mkdir /etc/opentracker && chmod +x /etc/opentracker \
+	&& curl "https://gist.githubusercontent.com/devillD/76d13f2e0a685a1ad6c1277ee19b2b5b/raw/c1733cbf75242df36e952b63265ecf39efe04783/ot.conf" > /etc/opentracker/opentracker.conf \
+        && echo "0123456789abcdef0123456789abcdef01234567" > /etc/opentracker/blacklist.txt \
 
 	&& git clone git://erdgeist.org/opentracker \
 		&& cd opentracker \
@@ -28,9 +29,6 @@ RUN apk add --no-cache \
 
 	&& apk del gcc g++ make git cvs zlib-dev curl \
 	&& rm -rf /var/cache/apk/* /tmp/*
-
-COPY ./opentracker.conf /etc/opentracker/opentracker.conf
-COPY ./blacklist.txt	/etc/opentracker/blacklist.txt
 
 EXPOSE 6969/tcp
 EXPOSE 6969/udp
