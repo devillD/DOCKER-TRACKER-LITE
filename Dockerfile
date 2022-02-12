@@ -2,10 +2,10 @@ FROM alpine
 
 WORKDIR /tmp
 
-RUN apk add --no-cache \
-	nodejs \
-	npm \
+RUN apk add --no-cache --update nodejs npm
 
-	&& npm install -g bittorrent-tracker
+RUN npm install -g bittorrent-tracker
 
-CMD ["bittorrent-tracker","-q","--http","--ws"]
+EXPOSE 8000
+
+CMD ["bittorrent-tracker","-q","--ws"]
