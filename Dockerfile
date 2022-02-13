@@ -1,9 +1,3 @@
-FROM node:14-slim
-
+FROM ghcr.io/devilld/opentracker
 WORKDIR /tmp
-
-RUN npm install -g bittorrent-tracker
-
-EXPOSE 8000
-
-CMD ["bittorrent-tracker"]
+CMD ["opentracker","-f","/etc/opentracker/opentracker.conf"]
