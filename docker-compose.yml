@@ -1,0 +1,6 @@
+services:
+  x:
+    build: .
+    ports:
+      - "6969:6969"
+    restart: unless-stopped
