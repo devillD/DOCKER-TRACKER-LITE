@@ -1,5 +1,5 @@
 services:
-  x:
+  docker-tracker:
     build: .
     ports:
       - "6969:6969"
