@@ -1,7 +1,6 @@
 FROM ghcr.io/devilld/opentracker
 WORKDIR /tmp
-ENV PORT=30125
-ENV CONF_URL=https://o--cocacoa.repl.co/-/o-t.conf
-RUN apk add --no-cache curl && curl $CONF_URL -o /etc/opentracker/opentracker.conf
-COPY . .
+ENV PORT=6969
+EXPOSE 6969/tcp
+EXPOSE 6969/udp
 CMD ["opentracker","-f","/etc/opentracker/opentracker.conf"]
